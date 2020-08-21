@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+{{ message }}
+
+<ul>
+
+ <li>Name: {{ molecule.name }}</li>
+ <li>Formula: {{ molecule.formula }}</li>
+ <li>Molecular Weight: {{ molecule.molecular_weight }} {{ molecule.mw_unit }}</li>
+ <li>InchiKey: {{ molecule.inchikey }}</li>
+ <li>Elements: </li>
+  <ul>
+    {% for element in m_e %}
+   <li> {{ element.name }} </li>
+   {% endfor %}
+
+
+
+  </ul>
+
+
+</ul>
+{% endblock %}

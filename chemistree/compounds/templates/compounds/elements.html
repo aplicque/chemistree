@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+{{ message }}
+
+<ul>
+{% for element in elements %}
+
+ <li><a href="elements/inspect/{{ element.id }}">      {{ element.name }} </a></li>
+
+
+{% endfor %}
+</ul>
+
+<form action=" " method="post">
+ {% csrf_token %}
+ <input name="element" type="text" placeholder="Insert element here">
+ <button class=" btn btn-success" type="submit" name="action">Submit</button>
+</form>
+
+
+
+
+
+
+{% endblock %}
